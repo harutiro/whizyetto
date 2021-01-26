@@ -3,6 +3,7 @@ package app.makino.harutiro.whizyetto
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
@@ -15,9 +16,9 @@ class MainActivity : AppCompatActivity() {
             AlertDialog.Builder(this) // FragmentではActivityを取得して生成
                     .setTitle("タイトル")
                     .setMessage("メッセージ")
-                    .setPositiveButton("OK", { dialog, which ->
-                        // TODO:Yesが押された時の挙動
-                    })
+                    .setPositiveButton("OK") { dialog, which ->
+                        // Yesが押された時の挙動
+                    }
                     .show()
         }
 
@@ -25,15 +26,27 @@ class MainActivity : AppCompatActivity() {
             AlertDialog.Builder(this) // FragmentではActivityを取得して生成
                     .setTitle("タイトル")
                     .setMessage("メッセージ")
-                    .setPositiveButton("OK", { dialog, which ->
-                        // TODO:Yesが押された時の挙動
-                    })
-                    .setNegativeButton("No", { dialog, which ->
-                        // TODO:Noが押された時の挙動
-                    })
+                    .setPositiveButton("OK") { dialog, which ->
+                        // Yesが押された時の挙動
+                    }
+                    .setNegativeButton("No") { dialog, which ->
+                        // Noが押された時の挙動
+                    }
+                    .show()
+        }
+
+        findViewById<View>(R.id.floatingActionButton).setOnClickListener {
+            AlertDialog.Builder(this) // FragmentではActivityを取得して生成
+                    .setTitle("タイトル")
+                    .setMessage("メッセージ")
+                    .setPositiveButton("OK") { dialog, which ->
+                        // Yesが押された時の挙動
+                    }
                     .show()
         }
     }
+
+
 
 
 
